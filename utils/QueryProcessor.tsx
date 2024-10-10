@@ -14,9 +14,15 @@ export default function QueryProcessor(query: string): string {
     return (x+y).toString();
   }
 
-  // if (query.toLowerCase().includes("What is the ")) {
-
-  // }
+  if (query.toLowerCase().includes("largest")) {
+    const numbers = query.match(/\d+/g)?.map(Number);
+    if (numbers && numbers.length > 0) {
+      const largestNumb = Math.max(...numbers);
+      console.log(largestNumb); // Output the largest number
+    } else {
+      console.log("No numbers found.");
+    }
+  }
 
   else if (query.toLowerCase().includes("andrew")) {
     return (
